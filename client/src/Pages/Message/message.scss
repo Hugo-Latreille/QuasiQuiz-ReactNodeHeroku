@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+.messageContainer {
+	border: 1px solid white;
+	width: 500px;
+	height: 200px;
+	position: absolute;
+	bottom: 4rem;
+	right: 0;
+	padding-top: 1rem;
+	overflow-y: auto;
+
+	& input {
+		position: absolute;
+		width: 60%;
+		height: 1rem;
+		bottom: 0rem;
+		right: 0;
+		left: 0;
+	}
+
+	& .gameMaster {
+		color: green;
+	}
+
+	& .me {
+		color: yellow;
+		text-align: end;
+		padding-right: 2rem;
+	}
+
+	& .other {
+		color: orange;
+		padding-left: 2rem;
+	}
+
+	& .send {
+		position: absolute;
+		width: 35%;
+		height: 1.5rem;
+		bottom: 0rem;
+		right: 0;
+	}
+
+	& .close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		& svg {
+			fill: white;
+		}
+	}
+}
+
+.chatIcon {
+	position: absolute;
+	bottom: 4rem;
+	right: 2rem;
+
+	& svg {
+		fill: white;
+		height: 50px;
+		width: 50px;
+	}
+	& .notifications {
+		border-radius: 20px;
+		border: 2px solid #fff;
+		width: 20px;
+		height: 20px;
+		background-color: #ff6b6b;
+		position: absolute;
+		top: -5px;
+		left: -10px;
+		font-size: 10px;
+		text-align: center;
+		line-height: 20px;
+		font-family: "Roboto", sans-serif;
+		font-weight: 400;
+		color: #fff;
+		font-weight: 700;
+		&.animate {
+			transform-origin: center bottom;
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			animation-iteration-count: 2;
+			animation-name: rubberBand;
+		}
+	}
+}
+
+@keyframes rubberBand {
+	0% {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(0.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, 0.95, 1);
+	}
+
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}

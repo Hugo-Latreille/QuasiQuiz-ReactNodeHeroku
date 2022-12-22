@@ -1,0 +1,24 @@
+@use "../styles/vars" as v;
+@use "../styles/mixins" as m;
+
+.footer {
+  background-color: v.$bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 5vh;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+
+  p {
+    @include m.secondary-font;
+    color: v.$primary-color;
+
+    a {
+      text-decoration: underline;
+      color: v.$primary-color;
+    }
+  }
+}

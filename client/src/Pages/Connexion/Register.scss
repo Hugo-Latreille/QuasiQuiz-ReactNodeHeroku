@@ -1,0 +1,197 @@
+@use "./../../styles/vars" as v;
+@use "./../../styles/mixins" as m;
+
+.register-container {
+	margin: 3.4rem 3.4rem 0 3.4rem;
+	width: 80%;
+	height: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.content {
+		padding-top: 2rem;
+
+		.inputs-container {
+			display: flex;
+			justify-content: space-between;
+		}
+		.inputs-container .form-group {
+			width: 48%;
+		}
+
+		.eye_register_pass {
+			position: absolute;
+			top: 14.9rem;
+			right: 0.1rem;
+			color: v.$grey;
+		}
+
+		.eye_register_confirm {
+			position: absolute;
+			top: 10.3rem;
+			right: 0.1rem;
+			color: v.$grey;
+		}
+
+		.password-safety {
+			font-size: 0.9rem;
+			margin-top: -1.2rem;
+			margin-bottom: 2rem;
+			color: v.$grey;
+
+			&-container {
+				width: 100%;
+				height: 0.6rem;
+				background-color: v.$backgroundLight;
+				border-radius: 8px;
+				margin-top: 0.5rem;
+				margin-bottom: 0.6rem;
+			}
+
+			&-quart {
+				width: 25%;
+				height: 0.6rem;
+				background-color: v.$user-color;
+				border-radius: 8px;
+			}
+
+			&-middle {
+				width: 50%;
+				height: 0.6rem;
+				background-color: v.$gm-color;
+				border-radius: 8px;
+			}
+
+			&-3quart {
+				width: 75%;
+				height: 0.6rem;
+				background-color: v.$blue;
+				border-radius: 8px;
+			}
+
+			&-full {
+				width: 100%;
+				height: 0.6rem;
+				background-color: v.$g-color;
+				border-radius: 8px;
+			}
+
+			& span {
+				font-size: 0.8rem;
+			}
+		}
+		.form {
+			width: 80%;
+			position: relative;
+			margin: auto;
+			.form-group {
+				position: relative;
+
+				.label {
+					color: v.$grey;
+					font-size: 0.8rem;
+					position: absolute;
+					top: -17px;
+					left: 8px;
+					pointer-events: none;
+					transition: 0.5s;
+				}
+				input {
+					width: 100%;
+					margin-top: 0.1rem;
+					height: 2.5rem;
+					padding: 0px 10px;
+					font-size: 16px;
+					@include m.principal-font;
+					background-color: v.$bg-color;
+					border: 0;
+					outline: none;
+					border-radius: 4px;
+					border: 1px solid v.$primary-color;
+					margin-bottom: 31px;
+					transition: 0.5s;
+
+					&:focus ~ .label {
+						color: v.$primary-color;
+						transform: translateX(15px);
+						font-size: 1rem;
+						padding: 0;
+						background-color: transparent;
+						border-left: 1px solid v.$primary-color;
+						border-right: 1px solid v.$primary-color;
+					}
+
+					&:focus {
+						border: 2px solid v.$grey;
+					}
+				}
+			}
+		}
+
+		.main-button-colored {
+			color: v.$g-color;
+			border: solid 2px v.$g-color;
+			font-weight: bolder;
+			padding: 0.8rem 1.6rem;
+			border-radius: 25px;
+			background-color: transparent;
+			//   background: v.$linearGradient;
+			//   -webkit-background-clip: text;
+			//   background-clip: text;
+			//   -webkit-text-fill-color: transparent;
+			margin: 0.5rem;
+			cursor: pointer;
+		}
+
+		.third-button-colored {
+			color: v.$user-color;
+			font-size: 0.8rem;
+			padding-left: 1rem;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		.avatarContainer {
+			display: flex;
+			// justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			gap: 1rem;
+			// background-color: #131324;
+			// height: 30vh;
+			width: 25vw;
+
+			& .loader {
+				// width: 75%;
+				height: 15vh;
+			}
+			& .title-container {
+				h1 {
+					color: v.$grey;
+				}
+			}
+			& .avatars {
+				display: flex;
+				// gap: 0.1rem;
+				& .avatar {
+					border: 0.25rem solid transparent;
+					// padding: 0.2rem;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					transition: 0.5s ease-in-out;
+					& img {
+						height: 3rem;
+						transition: 0.5s ease-in-out;
+					}
+				}
+				& .selected {
+					border: 0.25rem solid v.$primary-color;
+				}
+			}
+		}
+	}
+}

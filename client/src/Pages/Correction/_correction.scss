@@ -1,0 +1,139 @@
+@use "../../styles/vars" as v;
+@use "../../styles/mixins" as m;
+
+.game-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  .game-box {
+    // height: 20rem;
+    // width: 20rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    // margin-bottom: 5rem;
+
+    .media {
+      img {
+        height: 10rem;
+      }
+    }
+    .question {
+      p {
+        @include m.secondary-font;
+        color: v.$text-color;
+        font-size: larger;
+      }
+    }
+
+    .answer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .good-answer {
+        @include m.secondary-font;
+        color: v.$text-color;
+        margin-bottom: 1rem;
+      }
+      .gamer-answer {
+        border: 1px solid v.$primary-color;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        p {
+          color: v.$primary-color;
+          @include m.principal-font;
+          font-size: larger;
+        }
+      }
+    }
+    .gamer-pseudo {
+      @include m.principal-font;
+      color: v.$primary-color;
+      & .avatar {
+        height: 3rem;
+        border-radius: 0.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+    .true-false {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      button {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        &.true {
+          @include m.principal-font;
+          border: 1px solid v.$g-color;
+          background-color: v.$bg-color;
+          color: v.$g-color;
+          &.true__active {
+            background-color: v.$g-color;
+            color: v.$bg-color;
+          }
+
+          &:hover {
+            background-color: v.$g-color;
+            color: v.$bg-color;
+          }
+        }
+        &.false {
+          @include m.principal-font;
+          border: 1px solid v.$user-color;
+          background-color: v.$bg-color;
+          color: v.$user-color;
+          &.false__active {
+            background-color: v.$user-color;
+            color: v.$bg-color;
+          }
+
+          &:hover {
+            background-color: v.$user-color;
+            color: v.$bg-color;
+          }
+        }
+      }
+    }
+    .next {
+      button {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        &.next {
+          @include m.principal-font;
+          border: 1px solid v.$text-color;
+          background-color: v.$bg-color;
+          color: v.$text-color;
+
+          &:hover {
+            background-color: v.$text-color;
+            color: v.$bg-color;
+          }
+        }
+      }
+    }
+  }
+  .progressbar-box {
+    // margin: 3rem 0.5rem;
+    position: fixed;
+    bottom: 3rem;
+    height: 1rem;
+    width: 90%;
+    border: 1px solid v.$g-color;
+    border-radius: 0.5rem;
+    .lvl-border {
+      height: 1rem;
+      width: 50%;
+      background-color: v.$g-color;
+      border-radius: 0.5rem;
+    }
+  }
+}

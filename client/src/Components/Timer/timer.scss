@@ -1,0 +1,60 @@
+@use "../../styles/vars" as v;
+@use "../../styles/mixins" as m;
+
+.timer-container {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 20px auto 0;
+}
+
+.timer-text {
+	@include m.principal-font;
+	color: v.$primary-color;
+	font-size: 18px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.svgCircle {
+	stroke-dasharray: 250px;
+	stroke-dashoffset: 0px;
+	stroke-linecap: round;
+	stroke-width: 5px;
+	stroke: v.$primary-color;
+	fill: none;
+	transition: 8s linear all;
+}
+
+.svgCircle.warning {
+	stroke: red;
+}
+
+@keyframes countdown {
+	from {
+		stroke-dashoffset: 0px;
+	}
+	to {
+		stroke-dashoffset: 250px;
+	}
+	99% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.thin-circle {
+	border: 1px solid #3a424b;
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: -1;
+	transform: translate(-50%, -50%);
+}

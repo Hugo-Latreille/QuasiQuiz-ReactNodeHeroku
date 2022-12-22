@@ -1,0 +1,15 @@
+{
+	"name": "quasiquiz",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"script": {
+		"start": "node server.js",
+		"heroku-postbuild": "cd client && npm install && npm run build"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.18.2"
+	}
+}

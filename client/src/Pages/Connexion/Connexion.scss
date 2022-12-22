@@ -1,0 +1,145 @@
+@use "./../../styles/vars" as v;
+@use "./../../styles/mixins" as m;
+
+.connexion {
+  background-color: v.$bg-color-modale;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 999;
+  @include m.principal-font;
+
+  &-container {
+    width: 50%;
+    min-height: 75%;
+    margin: auto;
+    background-color: v.$bg-color;
+    display: flex;
+    border: 1px solid #757042;
+    border-radius: 10px;
+    position: relative;
+
+    &-navigation {
+      position: relative;
+      width: 30%;
+      height: 100%;
+      border-radius: 10px 0 0 10px;
+      background-image: linear-gradient(
+        v.$primary-color,
+        v.$primary-color,
+        v.$bg-color
+      );
+    }
+
+    &-form {
+      width: 70%;
+      height: 100%;
+    }
+  }
+
+  &-logo {
+    width: 100%;
+    margin: 2rem auto;
+  }
+}
+
+.navigation-links {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  top: 30%;
+
+  & span {
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 1rem;
+    color: v.$bg-color;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 600ms ease-in-out;
+  }
+}
+
+.link-is-active {
+  background-color: v.$bg-color;
+  border-radius: 25px 0 0 25px;
+  color: v.$primary-color !important;
+}
+
+@media screen and (width < 1180px) {
+  .navigation-links {
+    font-size: 0.8rem;
+
+    & span {
+      padding: 1.5rem 1.6rem;
+      margin: 0;
+      text-align: right;
+    }
+  }
+}
+
+@media screen and (width < 840px) {
+  .connexion {
+    &-container {
+      width: 97%;
+      margin: auto;
+      height: 80vh;
+    }
+  }
+
+  .navigation-links {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (width < 600px) {
+  .connexion {
+    &-container {
+      width: 96%;
+      margin: auto;
+      height: 80vh;
+    }
+  }
+
+  .navigation-links {
+    font-size: 0.7rem;
+
+    & span {
+      padding: 1.5rem 1.6rem;
+      margin: 0;
+      text-align: right;
+    }
+  }
+}
+
+.close-modal {
+  background-color: white;
+  border: none;
+  padding: 1rem;
+  background: v.$primary-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.9;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.success {
+  color: v.$g-color;
+}
+
+.warning {
+  color: v.$gm-color;
+}
+
+.danger {
+  color: v.$user-color;
+}

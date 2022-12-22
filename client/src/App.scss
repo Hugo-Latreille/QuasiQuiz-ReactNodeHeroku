@@ -1,0 +1,27 @@
+@use "./styles/vars" as v;
+@use "./styles/mixins" as m;
+
+body {
+
+  background-color: v.$bg-color;
+  // min-height: 100vh;
+  min-width: 100vw;
+  main {
+    min-height: 78vh;
+    margin-top: 12vh;
+    margin-bottom: 10vh;
+
+    // margin: 5rem 0;
+
+    // @include m.tablets-only {
+    //   margin-top: 10rem;
+    // }
+
+    // @include m.desktop-only {
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
+  }
+
+}

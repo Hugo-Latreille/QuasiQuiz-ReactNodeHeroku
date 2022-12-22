@@ -1,0 +1,50 @@
+@use "../../styles/vars" as v;
+
+#progress {
+	max-width: 400px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+/**
+ * Progress Bar styles
+ */
+.progress-bar {
+	width: 100%;
+	margin: 3rem 0.5rem;
+}
+
+.progress-bar__bar {
+	border-radius: 20px;
+	height: 20px;
+	background-color: #31383f;
+	margin-bottom: 14px;
+	border: 2px solid v.$primary-color;
+}
+
+.progress-bar__progress {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	min-width: 15px;
+	height: 20px;
+	border-radius: 20px;
+	// box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
+	// transition: background-color 0.3s ease;
+	transition: 1s ease 0.3s;
+	width: 0;
+	opacity: 0;
+}
+
+.levelOne {
+	background-color: blue;
+}
+
+.levelTwo {
+	background-color: yellow;
+}
+
+.levelThree {
+	background-color: orange;
+}

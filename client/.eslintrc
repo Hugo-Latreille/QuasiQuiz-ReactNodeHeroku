@@ -1,0 +1,24 @@
+{
+	"extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+	"plugins": ["react"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"sourceType": "module",
+		"ecmaVersion": "latest"
+	},
+	"rules": {
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error",
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"react/prop-types": "off",
+		"no-unused-vars": "warn"
+	},
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	}
+}

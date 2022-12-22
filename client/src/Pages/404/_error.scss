@@ -1,0 +1,83 @@
+@use "../../styles/vars" as v;
+@use "../../styles/mixins" as m;
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .error-img-box {
+    margin: 3rem 0;
+
+    @include m.tablets-only {
+      margin: 6rem 0;
+      img {
+        height: 20rem;
+      }
+    }
+
+    @include m.desktop-only {
+      margin: 0;
+    }
+  }
+
+  .shameonyougm {
+    @include m.secondary-font;
+    margin: 4rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    row-gap: 1rem;
+    @include m.tablets-only {
+      font-size: x-large;
+    }
+    .speech-box {
+      text-align: center;
+      padding: 0.5rem 0;
+      &.left {
+        justify-self: flex-start;
+        grid-column: 1 / 2;
+        border-radius: 1rem 1rem 1rem 0;
+        background-color: v.$g-color;
+        &.speech1 {
+          grid-row: 1;
+          width: 12rem;
+          animation: tadam 0.3s linear;
+          @include m.tablets-only {
+            width: 18rem;
+          }
+        }
+        &.speech3 {
+          grid-row: 3;
+          padding: 0.5rem 0.5rem;
+        }
+      }
+      &.right {
+        justify-self: flex-end;
+        grid-column: 3 / 4;
+        border-radius: 1rem 1rem 0rem 1rem;
+        background-color: v.$user-color;
+        &.speech2 {
+          grid-row: 2;
+          width: 4rem;
+          @include m.tablets-only {
+            width: 6rem;
+          }
+        }
+        &.speech4 {
+          grid-row: 4;
+          padding: 0.5rem 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+// @keyframes tadam {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
